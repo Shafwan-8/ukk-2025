@@ -16,6 +16,8 @@
     },
     "dependencies": {
         "@tabler/core": "^1.0.0-beta24",
-        "datatables.net-dt": "^2.2.1"
+        "datatables.net-bs5": "^2.2.1",
+        "datatables.net-dt": "^2.2.1",
+        "jquery": "^3.7.1"
     }
 }

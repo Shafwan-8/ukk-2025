@@ -25,7 +25,7 @@
         <div class="collapse navbar-collapse" id="sidebar-menu">
             <ul class="navbar-nav pt-2">
 
-                <li class="nav-item">
+                <li class="nav-item {{ request()->routeIs('admin.dashboard.index') ? 'active' : '' }}">
                     <a class="nav-link" href="#">
                         <span class="nav-link-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"

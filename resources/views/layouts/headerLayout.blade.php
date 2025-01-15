@@ -9,6 +9,8 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="{{ asset('css/tabler.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/dataTable/dataTables.dataTables.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/dataTable/dataTables.bootstrap5.min.css') }}">
 </head>
 
 <body>
@@ -18,4 +20,3 @@
         @include('components.sidebar')
 
         <div class="page-wrapper">
-        
