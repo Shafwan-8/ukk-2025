@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nama_user', 50);
             $table->string('password_user', 200);
             $table->enum('level_user', ['1', '2']);
-            $table->enum('status_user', ['0', '1']);
+            $table->enum('status_user', ['1', '0']);
             $table->rememberToken();
             $table->timestamps();
         });

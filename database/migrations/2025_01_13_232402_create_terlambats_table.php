@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('semester', 20);
             $table->string('tapel', 10);
             $table->foreignId('id_alasan')->references('id_alasan')->on('alasans')->onDelete('cascade');
+            $table->date('tanggal')->default(new DateTime());
             $table->timestamps();
         });
     }

@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id('id_siswa')->primary();
             $table->string("nis", 7);
             $table->string('nama', 100);
-            $table->enum('jk', ['laki-laki', 'perempuan']);
-            // $table->enum('tingkatan', ['', '']);
+            $table->enum('jk', ['L', 'P']);
+            $table->enum('tingkatan', ['1', '2', '3']);
             $table->string('kelas', 20);
             $table->enum('aktif', ['0', '1']);
             $table->timestamps();
