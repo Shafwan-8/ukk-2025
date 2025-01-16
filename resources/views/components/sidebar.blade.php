@@ -29,7 +29,7 @@
             <ul class="navbar-nav pt-2">
 
                 <li class="nav-item {{ request()->routeIs('admin.dashboard.index') ? 'active' : '' }}">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="{{ route('admin.dashboard.index') }}">
                         <span class="nav-link-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -47,7 +47,7 @@
                     </a>
                 </li>
 
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown {{ $active === 'data-siswa' ? 'active' : '' }}">
                     <a class="nav-link dropdown-toggle" href="#navbar-base" data-bs-toggle="dropdown"
                         data-bs-auto-close="false" role="button" aria-expanded="false">
                         <span
@@ -72,7 +72,7 @@
                                 <a class="dropdown-item" href="#">
                                     Data User
                                 </a>
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="{{ route('siswa.index') }}">
                                     Data Siswa
                                 </a>
                                 <a class="dropdown-item" href="#">

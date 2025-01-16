@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\adminDashboardController;
 use App\Http\Controllers\authController;
+use App\Http\Controllers\siswaController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -19,4 +20,6 @@ Route::middleware('auth')->group(function () {
     Route::post('/logout', [authController::class, 'logout'])->name('logout');
 
     Route::get('/admin', [adminDashboardController::class, 'index'])->name('admin.dashboard.index');
+
+    Route::resource('/admin/siswa', siswaController::class);
 });

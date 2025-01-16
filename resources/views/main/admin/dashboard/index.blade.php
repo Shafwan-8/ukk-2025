@@ -1,7 +1,7 @@
 @include('layouts.headerLayout')
 
 <!-- Page header -->
-@include('components.pageHeader')
+<x-pageHeader :status="false" title="Dashboard" pretitle="Dashboard"/>
 
 <!-- Page body -->
 <div class="page-body">
