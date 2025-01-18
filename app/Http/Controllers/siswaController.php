@@ -11,9 +11,7 @@ class siswaController extends Controller
      */
     public function index()
     {
-        return view('main.admin.siswa.index', [
-            'active' => 'data-siswa'
-        ]);
+        return view('main.admin.siswa.index');
     }
 
     /**
@@ -21,7 +19,7 @@ class siswaController extends Controller
      */
     public function create()
     {
-        //
+        return view('main.admin.siswa.create');
     }
 
     /**

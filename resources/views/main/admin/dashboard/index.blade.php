@@ -134,8 +134,10 @@
             </div>
             <div class="col-lg-12">
                 <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title mb-1">Data Keterlambatan</h3>
+                    </div>
                     <div class="card-body">
-                        <h3 class="card-title">Data Keterlambatan</h3>
                         <div class="table-responsive">
                             <table id="dataTable" class="table table-bordered table-nowrap table-hover">
                                 <thead>

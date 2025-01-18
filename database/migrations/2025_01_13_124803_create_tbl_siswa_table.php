@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('nama', 100);
             $table->enum('jk', ['L', 'P']);
             $table->enum('tingkatan', ['1', '2', '3']);
-            $table->string('kelas', 20);
+            $table->string('jurusan', 20);
             $table->enum('aktif', ['0', '1']);
             $table->timestamps();
         });

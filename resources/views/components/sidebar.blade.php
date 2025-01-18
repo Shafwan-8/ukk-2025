@@ -47,7 +47,7 @@
                     </a>
                 </li>
 
-                <li class="nav-item dropdown {{ $active === 'data-siswa' ? 'active' : '' }}">
+                <li class="nav-item dropdown {{ request()->routeIs('siswa.*') ? 'active' : '' }}">
                     <a class="nav-link dropdown-toggle" href="#navbar-base" data-bs-toggle="dropdown"
                         data-bs-auto-close="false" role="button" aria-expanded="false">
                         <span
@@ -72,7 +72,7 @@
                                 <a class="dropdown-item" href="#">
                                     Data User
                                 </a>
-                                <a class="dropdown-item" href="{{ route('siswa.index') }}">
+                                <a class="dropdown-item {{ request()->routeIs('siswa.*') ? 'active' : '' }}" href="{{ route('siswa.index') }}">
                                     Data Siswa
                                 </a>
                                 <a class="dropdown-item" href="#">
