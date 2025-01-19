@@ -35,7 +35,7 @@ class siswaController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return view('main.admin.siswa.show');
     }
 
     /**

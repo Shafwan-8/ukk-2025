@@ -1,6 +1,6 @@
 @include('layouts.headerLayout')
 
-<x-pageHeader :status="true" pretitle="Siswa" title="Tambah Data Siswa" titleButton="Tambah Data Siswa" hideCreate />
+<x-pageHeader :status="true" pretitle="Siswa" title="Tambah Data Siswa" hideCreate />
 
 <div class="page-body">
     <div class="container-xl">
