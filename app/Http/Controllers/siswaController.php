@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Siswa;
 use Illuminate\Http\Request;
 
 class siswaController extends Controller
@@ -11,7 +12,11 @@ class siswaController extends Controller
      */
     public function index()
     {
-        return view('main.admin.siswa.index');
+        $siswas = Siswa::all();
+
+        return view('main.admin.siswa.index', [
+            'siswas' => $siswas
+        ]);
     }
 
     /**

@@ -19,21 +19,21 @@
                                     <th>Nis</th>
                                     <th>Nama Siswa</th>
                                     <th>Tingkatan</th>
-                                    <th>Kelas</th>
+                                    <th>Jurusan</th>
                                     <th>Aktif</th>
                                     <th>Action</th>
                                 </thead>
                                 <tbody>
-                                    @for ($i = 0; $i <= 15; $i++)
+                                    @foreach ($siswas as $siswa )
                                         <tr>
-                                            <td>{{ $i + 1 }}</td>
-                                            <td>222-060</td>
-                                            <td>Wawang</td>
-                                            <td>3</td>
-                                            <td>RPL 2</td>
-                                            <td>0/1</td>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $siswa->nis }}</td>
+                                            <td>{{ $siswa->nama }}</td>
+                                            <td>{{ $siswa->tingkatan }}</td>
+                                            <td>{{ $siswa->jurusan }}</td>
+                                            <td>{{ $siswa->aktif }}</td>
                                             <td>
-                                                <a href="{{ route('siswa.show', $i) }}"
+                                                <a href="{{ route('siswa.show', $siswa->id_siswa) }}"
                                                     class="avatar bg-primary text-white avatar-sm me-2">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24"
                                                         height="24" viewBox="0 0 24 24" fill="none"
@@ -46,7 +46,7 @@
                                                             d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" />
                                                     </svg>
                                                 </a>
-                                                <a href="{{ route('siswa.edit', $i) }}"
+                                                <a href="{{ route('siswa.edit', $siswa->id_siswa) }}"
                                                     class="avatar bg-yellow text-white avatar-sm me-2">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24"
                                                         height="24" viewBox="0 0 24 24" fill="none"
@@ -78,7 +78,7 @@
                                                 </button>
                                             </td>
                                         </tr>
-                                    @endfor
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
