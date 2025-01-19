@@ -43,7 +43,7 @@ class siswaController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view('main.admin.siswa.edit');
     }
 
     /**
