@@ -5,6 +5,12 @@
 
 <div class="page-body">
     <div class="container xl">
+        @if (session()->has('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>{{ session('success') }}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        @endif
         <div class="row row-deck row-cards">
             <div class="col-12">
                 <div class="card">
@@ -24,7 +30,7 @@
                                     <th>Action</th>
                                 </thead>
                                 <tbody>
-                                    @foreach ($siswas as $siswa )
+                                    @foreach ($siswas as $siswa)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $siswa->nis }}</td>
@@ -61,8 +67,9 @@
                                                         <path d="M16 5l3 3" />
                                                     </svg>
                                                 </a>
-                                                <button class="avatar bg-danger text-white avatar-sm border-0" type="button"
-                                                    data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                <button class="avatar bg-danger text-white avatar-sm border-0"
+                                                    type="button" data-bs-toggle="modal"
+                                                    data-bs-target="#exampleModal">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24"
                                                         height="24" viewBox="0 0 24 24" fill="none"
                                                         stroke="currentColor" stroke-width="1" stroke-linecap="round"
@@ -125,4 +132,9 @@
         </div>
     </div>
 </div>
+
+{{-- <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div> --}}
+
 @include('layouts.footerLayout')

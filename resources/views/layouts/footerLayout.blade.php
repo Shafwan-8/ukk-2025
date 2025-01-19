@@ -19,6 +19,7 @@
         <script src="{{ asset('js/dataTable/jquery.min.js') }}"></script>
         <script src="{{ asset('js/dataTable/dataTables.min.js') }}"></script>
         <script src="{{ asset('js/dataTable/dataTables.bootstrap5.min.js') }}"></script>
+        <script src="{{ asset('js/imask.min.js') }}"></script>
         <script>
             $(document).ready(function() {
                 $('#dataTable').DataTable({

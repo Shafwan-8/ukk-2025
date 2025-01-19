@@ -32,7 +32,17 @@ class siswaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $tervalidasi = $request->validate([
+            'nis' => 'required',
+            'nama' => 'required',
+            'jk' => 'required',
+            'tingkatan' => 'required',
+            'jurusan' => 'required',
+        ]);
+
+        Siswa::create($tervalidasi);
+
+        return to_route('siswa.index')->with('success', 'Siswa Berhasil Ditambahkan!');
     }
 
     /**
@@ -40,7 +50,21 @@ class siswaController extends Controller
      */
     public function show(string $id)
     {
-        return view('main.admin.siswa.show');
+        $siswa = Siswa::where('id_siswa', $id)->first();
+
+        if (!$siswa) {
+            return abort(404);
+        }
+
+        if ($siswa->jk == 'L') {
+            $siswa->jk = 'Laki-laki';
+        } else {
+            $siswa->jk = 'Perempuan';
+        }
+
+        return view('main.admin.siswa.show', [
+            'siswa' => $siswa
+        ]);
     }
 
     /**

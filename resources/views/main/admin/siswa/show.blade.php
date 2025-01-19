@@ -15,32 +15,32 @@
                             <tr>
                                 <th class="">NIS</th>
                                 <td class="">:</td>
-                                <td>222-070</td>
+                                <td>{{ $siswa->nis }}</td>
                             </tr>
                             <tr>
                                 <th>Nama Siswa</th>
                                 <td>:</td>
-                                <td>Muh. Shafwan Khairullah</td>
+                                <td>{{ $siswa->nama }}</td>
                             </tr>
                             <tr>
                                 <th>Jenis Kelamin</th>
                                 <td>:</td>
-                                <td>Laki-laki</td>
+                                <td>{{ $siswa->jk }}</td>
                             </tr>
                             <tr>
                                 <th>Tingkatan</th>
                                 <td>:</td>
-                                <td>XII</td>
+                                <td>{{ $siswa->tingkatan }}</td>
                             </tr>
                             <tr>
                                 <th>Jurusan</th>
                                 <td>:</td>
-                                <td>Rekayasa Perangkat Lunak</td>
+                                <td>{{ $siswa->jurusan }}</td>
                             </tr>
                             <tr>
                                 <th>Status</th>
                                 <td>:</td>
-                                <td>Aktif</td>
+                                <td>{{ $siswa->aktif }}</td>
                             </tr>
                         </table>
                     </div>
