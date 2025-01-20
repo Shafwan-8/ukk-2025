@@ -50,7 +50,7 @@ class siswaController extends Controller
      */
     public function show(string $id)
     {
-        $siswa = Siswa::where('id_siswa', $id)->first();
+        $siswa = Siswa::where('id', $id)->first();
 
         if (!$siswa) {
             return abort(404);
@@ -72,7 +72,15 @@ class siswaController extends Controller
      */
     public function edit(string $id)
     {
-        return view('main.admin.siswa.edit');
+        $siswa = Siswa::where('id', $id)->first();
+
+        if (!$siswa) {
+            return abort(404);
+        }
+
+        return view('main.admin.siswa.edit', [
+            'siswa' => $siswa
+        ]);
     }
 
     /**
@@ -80,7 +88,19 @@ class siswaController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $siswa = Siswa::where('id', $id)->first();
+
+        $tervalidasi = $request->validate([
+            'nis' => 'required',
+            'nama' => 'required',
+            'jk' => 'required',
+            'tingkatan' => 'required',
+            'jurusan' => 'required',
+        ]);
+
+        $siswa->update($tervalidasi);
+
+        return to_route('siswa.index')->with('success', 'Data Siswa Berhasil Diubah!');
     }
 
     /**
@@ -88,6 +108,10 @@ class siswaController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $siswa = Siswa::where('id', $id)->first();
+        dd($siswa); 
+        $siswa->delete();
+
+        return to_route('siswa.index')->with('success', 'Data Siswa Berhasil Dihapus!');
     }
 }

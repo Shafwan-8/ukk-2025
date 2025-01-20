@@ -48,6 +48,13 @@
                     ],
                 });
             });
+
+            function hapusData(event, nama, id){
+                event.preventDefault();
+                console.log(id);
+
+                document.getElementById(`hapus-${nama}-${id}`).submit();
+            }
         </script>
 
     </body>

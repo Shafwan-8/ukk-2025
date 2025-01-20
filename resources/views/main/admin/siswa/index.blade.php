@@ -39,7 +39,7 @@
                                             <td>{{ $siswa->jurusan }}</td>
                                             <td>{{ $siswa->aktif }}</td>
                                             <td>
-                                                <a href="{{ route('siswa.show', $siswa->id_siswa) }}"
+                                                <a href="{{ route('siswa.show', $siswa->id) }}"
                                                     class="avatar bg-primary text-white avatar-sm me-2">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24"
                                                         height="24" viewBox="0 0 24 24" fill="none"
@@ -52,7 +52,7 @@
                                                             d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" />
                                                     </svg>
                                                 </a>
-                                                <a href="{{ route('siswa.edit', $siswa->id_siswa) }}"
+                                                <a href="{{ route('siswa.edit', $siswa->id) }}"
                                                     class="avatar bg-yellow text-white avatar-sm me-2">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24"
                                                         height="24" viewBox="0 0 24 24" fill="none"
@@ -83,48 +83,62 @@
                                                         <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
                                                     </svg>
                                                 </button>
+                                                <div class="modal" id="exampleModal" tabindex="-1">
+                                                    <div class="modal-dialog modal-sm" role="document">
+                                                        <div class="modal-content">
+                                                            <button type="button" class="btn-close"
+                                                                data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            <div class="modal-status bg-danger"></div>
+                                                            <div class="modal-body text-center py-4">
+                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                    class="icon mb-2 text-danger icon-lg" width="24"
+                                                                    height="24" viewBox="0 0 24 24" stroke-width="2"
+                                                                    stroke="currentColor" fill="none"
+                                                                    stroke-linecap="round" stroke-linejoin="round">
+                                                                    <path stroke="none" d="M0 0h24v24H0z"
+                                                                        fill="none" />
+                                                                    <path d="M12 9v2m0 4v.01" />
+                                                                    <path
+                                                                        d="M5 19h14a2 2 0 0 0 1.84 -2.75l-7.1 -12.25a2 2 0 0 0 -3.5 0l-7.1 12.25a2 2 0 0 0 1.75 2.75" />
+                                                                </svg>
+                                                                <h3>Anda Yakin?</h3>
+                                                                <div class="text-secondary">Yakin untuk menghapus data
+                                                                    Siswa ini?</div>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <div class="w-100">
+                                                                    <div class="row">
+                                                                        <div class="col">
+                                                                            <button type="button" class="btn w-100"
+                                                                                data-bs-dismiss="modal">
+                                                                                Batal
+                                                                            </button>
+                                                                        </div>
+                                                                        <div class="col">
+                                                                            <form
+                                                                            action="{{ route('siswa.destroy', $siswa->id) }}"
+                                                                            id="hapus-siswa-{{ $siswa->id }}"
+                                                                            method="post">
+                                                                            <button type="submit"
+                                                                                class="btn btn-danger w-100"
+                                                                                data-bs-dismiss="modal">
+                                                                                Hapus Data
+                                                                            </button>
+                                                                            @csrf
+                                                                            @method('DELETE')
+                                                                            </form>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </td>
                                         </tr>
                                     @endforeach
                                 </tbody>
                             </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal" id="exampleModal" tabindex="-1">
-    <div class="modal-dialog modal-sm" role="document">
-        <div class="modal-content">
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            <div class="modal-status bg-danger"></div>
-            <div class="modal-body text-center py-4">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon mb-2 text-danger icon-lg" width="24"
-                    height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <path d="M12 9v2m0 4v.01" />
-                    <path
-                        d="M5 19h14a2 2 0 0 0 1.84 -2.75l-7.1 -12.25a2 2 0 0 0 -3.5 0l-7.1 12.25a2 2 0 0 0 1.75 2.75" />
-                </svg>
-                <h3>Anda Yakin?</h3>
-                <div class="text-secondary">Yakin untuk menghapus data Siswa ini?</div>
-            </div>
-            <div class="modal-footer">
-                <div class="w-100">
-                    <div class="row">
-                        <div class="col">
-                            <a href="#" class="btn w-100" data-bs-dismiss="modal">
-                                Batal
-                            </a>
-                        </div>
-                        <div class="col">
-                            <a href="#" class="btn btn-danger w-100" data-bs-dismiss="modal">
-                                Hapus Data
-                            </a>
                         </div>
                     </div>
                 </div>
