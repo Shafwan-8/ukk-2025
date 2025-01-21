@@ -43,7 +43,7 @@
                         },
                         {
                             className: "text-start",
-                            targets: [0, 1, 2, 3, 4]
+                            targets: "_all",
                         }
                     ],
                 });
