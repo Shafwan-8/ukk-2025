@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -11,7 +12,16 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('main.admin.user.index');
+        $users = User::all();
+        foreach ($users as $user) {
+            if ($user['level_user'] == '1') {
+                $user['level_user'] = 'Admin';
+            } else {
+                $user['level_user'] = 'Guru';
+            }
+        }
+
+        return view('main.admin.user.index', compact('users'));
     }
 
     /**
@@ -35,7 +45,7 @@ class UserController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return view('main.admin.user.show');
     }
 
     /**
