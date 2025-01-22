@@ -30,7 +30,7 @@
                                             Siswa Perempuan
                                         </div>
                                         <div class="text-secondary">
-                                            0 org.
+                                            {{ $jml_perempuan }} org.
                                         </div>
                                     </div>
                                 </div>
@@ -58,7 +58,7 @@
                                             Siswa Laki-laki
                                         </div>
                                         <div class="text-secondary">
-                                            0 org.
+                                            {{ $jml_lakiLaki }} org.
                                         </div>
                                     </div>
                                 </div>
@@ -88,7 +88,7 @@
                                             Total Siswa
                                         </div>
                                         <div class="text-secondary">
-                                            0 org.
+                                            {{ $jml_siswa }} org.
                                         </div>
                                     </div>
                                 </div>
@@ -119,7 +119,7 @@
                                             Siswa Tidak Aktif
                                         </div>
                                         <div class="text-secondary">
-                                            0 org.
+                                            {{ $jml_siswa_tidak_aktif }} org.
                                         </div>
                                     </div>
                                 </div>

@@ -12,6 +12,12 @@ class adminDashboardController extends Controller
      */
     public function index()
     {
+        $jml_perempuan = Siswa::where('jk', 'P')->count();
+        $jml_lakiLaki = Siswa::where('jk', 'L')->count();
+        $jml_siswa = Siswa::count();
+        $jml_siswa_tidak_aktif = Siswa::where('aktif', 0)->count();
+
+
         $tingkatan_jurusan = [
             '3' => ['RPL1', 'RPL2', 'MMK', 'TKJ'],
             '2' => ['TJKT2', 'TJKT1', 'PPLG', 'DKV'],
@@ -27,7 +33,13 @@ class adminDashboardController extends Controller
             }
         }
 
-        return view('main.admin.dashboard.index', ['counts' => $counts]);
+        return view('main.admin.dashboard.index', [
+            'counts' => $counts,
+            'jml_perempuan' => $jml_perempuan,
+            'jml_lakiLaki' => $jml_lakiLaki,
+            'jml_siswa' => $jml_siswa,
+            'jml_siswa_tidak_aktif' => $jml_siswa_tidak_aktif
+        ]);
 
     }
 
