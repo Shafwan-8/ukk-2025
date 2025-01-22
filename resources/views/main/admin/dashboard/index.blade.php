@@ -142,13 +142,14 @@
                                     <th>Jumlah</th>
                                 </thead>
                                 <tbody>
-                                    @for ($i = 0; $i <= 15; $i++)
+                                    @php $index = 1; @endphp
+                                    @foreach ($counts as $key => $count)
                                         <tr>
-                                            <td>{{ $i + 1 }}</td>
-                                            <td>3 RPL 1</td>
-                                            <td>37</td>
+                                            <td>{{ $index++ }}</td>
+                                            <td>{{ str_replace(['jml_', '3', '2', '1'], ['', '3 ', '2 ', '1 '], $key) }}</td>
+                                            <td>{{ $count }}</td>
                                         </tr>
-                                    @endfor
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

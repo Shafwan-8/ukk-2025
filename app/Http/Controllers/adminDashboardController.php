@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Siswa;
 use Illuminate\Http\Request;
 
 class adminDashboardController extends Controller
@@ -11,7 +12,23 @@ class adminDashboardController extends Controller
      */
     public function index()
     {
-        return view('main.admin.dashboard.index');
+        $tingkatan_jurusan = [
+            '3' => ['RPL1', 'RPL2', 'MMK', 'TKJ'],
+            '2' => ['TJKT2', 'TJKT1', 'PPLG', 'DKV'],
+            '1' => ['PPLG', 'DKV', 'TJKT']
+        ];
+
+        $counts = [];
+
+        foreach ($tingkatan_jurusan as $tingkatan => $jurusans) {
+            foreach ($jurusans as $jurusan) {
+                $key = "jml_{$tingkatan}{$jurusan}";
+                $counts[$key] = Siswa::where('tingkatan', $tingkatan)->where('jurusan', $jurusan)->count();
+            }
+        }
+
+        return view('main.admin.dashboard.index', ['counts' => $counts]);
+
     }
 
     /**
