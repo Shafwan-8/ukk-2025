@@ -3,6 +3,7 @@
 use App\Http\Controllers\adminDashboardController;
 use App\Http\Controllers\authController;
 use App\Http\Controllers\siswaController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -22,4 +23,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin', [adminDashboardController::class, 'index'])->name('admin.dashboard.index');
 
     Route::resource('/admin/siswa', siswaController::class);
+
+    Route::resource('/admin/user', UserController::class);
 });
