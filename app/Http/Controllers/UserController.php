@@ -45,7 +45,12 @@ class UserController extends Controller
      */
     public function show(string $id)
     {
-        return view('main.admin.user.show');
+        $user = User::where('id', $id)->first();
+
+        $user['level_user'] = $user['level_user'] == '1' ? 'Admin' : 'Guru';
+        
+
+        return view('main.admin.user.show', compact('user'));
     }
 
     /**

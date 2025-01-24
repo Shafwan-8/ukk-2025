@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Crypt;
 
 class DatabaseSeeder extends Seeder
 {
@@ -21,8 +22,8 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         User::create([
-            'username' => 'wawan',
-            'password' => bcrypt('wawan'),
+            'username' => 'admin',
+            'password' => bcrypt('admin'),
             'level_user' => '1',
             'status_user' => '1',
         ]);

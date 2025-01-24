@@ -10,28 +10,24 @@
             </div>
             <div class="card-body">
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-6 col-md-12">
                         <div class="mb-3">
-                            <label class="form-label">Nama</label>
-                            <input type="text" class="form-control" value="#" readonly>
+                            <span class="form-label">Username</span>
+                            <span>{{ $user->username }}</span>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Email</label>
-                            <input type="email" class="form-control" value="#" readonly>
+                            <span class="form-label">Password</span>
+                            <span>{{ $user->password }}</span>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Role</label>
-                            <input type="text" class="form-control" value="#" readonly>
+                            <span class="form-label">Level User</span>
+                            <span>{{ $user->level_user }}</span>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Status</label>
-                            <input type="text" class="form-control" value="#" readonly>
+                            <span class="form-label">Status</span>
+                            <span>{{ $user->status_user }}</span>
                         </div>
-                        <div class="mb-3">
-                            <label class="form-label">Created At</label>
-                            <input type="text" class="form-control" value="#" readonly>
-                        </div>
-                    </div>
+                    </div1>
                 </div>
             </div>
         </div>

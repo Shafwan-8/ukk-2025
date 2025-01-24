@@ -18,6 +18,12 @@
                     <img src="{{ asset('img/light-logo.png') }}" width="200" alt="Tabler" class="">
                 </a>
             </div>
+            @if (session()->has('failed'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                <b>{{ session('failed') }}</b>
+            </div>
+            @endif
             <div class="card card-md shadow-lg">
                 <div class="card-body">
                     <h2 class="h2 text-center mb-4">Login to your account</h2>
