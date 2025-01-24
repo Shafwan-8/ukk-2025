@@ -68,7 +68,10 @@ class UserController extends Controller
      */
     public function edit(string $id)
     {
-        //
+
+        $user = User::where('id', $id)->first();
+
+        return view('main.admin.user.edit', compact('user'));
     }
 
     /**
@@ -76,7 +79,28 @@ class UserController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $user = User::where('id', $id)->first();
+
+        if (!$user) {
+            return abort(404);
+        }
+
+        if (request('password')) {
+            $tervalidasi = $request->validate([
+                'username' => 'required',
+                'password' => 'confirmed',
+                'level_user' => 'required',
+            ]);
+        } else {
+            $tervalidasi = $request->validate([
+                'username' => 'required',
+                'level_user' => 'required',
+            ]);
+        }
+
+        $user->update($tervalidasi);
+
+        return to_route('user.index')->with('success', 'Data User Berhasil Diubah!');
     }
 
     /**
