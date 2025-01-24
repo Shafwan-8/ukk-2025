@@ -1,6 +1,6 @@
 @include('layouts.headerLayout')
 
-<x-pageHeader :status="true" pretitle="User" title="Data User" route='{{ route('user.create') }}' titleButton="Tambah Data User" hideBack />
+<x-pageHeader :status="true" pretitle="User" title="Data User" :route="route('user.create')" titleButton="Tambah Data User" hideBack />
 
 <div class="page-body">
     <div class="container xl">

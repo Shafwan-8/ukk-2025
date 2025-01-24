@@ -29,7 +29,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('main.admin.user.create');
     }
 
     /**
@@ -37,7 +37,17 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $tervalidasi = $request->validate([
+            'username' => 'required',
+            'password' => 'required',
+            'level_user' => 'required',
+        ]);
+
+        $tervalidasi['password'] = bcrypt($tervalidasi['password']);
+
+        User::create($tervalidasi);
+
+        return to_route('user.index')->with('success', 'User berhasil ditambahkan');
     }
 
     /**
@@ -48,7 +58,7 @@ class UserController extends Controller
         $user = User::where('id', $id)->first();
 
         $user['level_user'] = $user['level_user'] == '1' ? 'Admin' : 'Guru';
-        
+
 
         return view('main.admin.user.show', compact('user'));
     }
