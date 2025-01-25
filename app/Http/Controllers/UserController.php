@@ -108,6 +108,14 @@ class UserController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $user = User::where('id', $id)->first();
+
+        if (!$user) {
+            return abort(404);
+        }
+
+        $user->delete();
+
+        return to_route('user.index')->with('success', 'Data User Berhasil Dihapus!');
     }
 }

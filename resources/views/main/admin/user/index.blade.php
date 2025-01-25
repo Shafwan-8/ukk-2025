@@ -60,7 +60,7 @@
                                                     </svg>
                                                 </a>
                                                 <button class="avatar bg-danger text-white avatar-sm border-0"
-                                                    type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                    type="button" data-bs-toggle="modal" data-bs-target="#exampleModal{{ $user->id }}">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                         viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                                         stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
@@ -73,7 +73,7 @@
                                                         <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
                                                     </svg>
                                                 </button>
-                                                <div class="modal" id="exampleModal" tabindex="-1">
+                                                <div class="modal" id="exampleModal{{ $user->id }}" tabindex="-1">
                                                     <div class="modal-dialog modal-sm" role="document">
                                                         <div class="modal-content">
                                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
@@ -92,7 +92,7 @@
                                                                 </svg>
                                                                 <h3>Anda Yakin?</h3>
                                                                 <div class="text-secondary">Yakin untuk menghapus data
-                                                                    Siswa ini?</div>
+                                                                    User ini?</div>
                                                             </div>
                                                             <div class="modal-footer">
                                                                 <div class="w-100">
@@ -104,11 +104,14 @@
                                                                             </button>
                                                                         </div>
                                                                         <div class="col">
-                                                                            <button type="button"
-                                                                                class="btn btn-danger w-100"
-                                                                                data-bs-dismiss="modal">
-                                                                                Hapus Data
-                                                                            </button>
+                                                                            <form action="{{ route('user.destroy', $user->id) }}" method="POST">
+                                                                                @csrf
+                                                                                @method('DELETE')
+                                                                                <button type="submit"
+                                                                                    class="btn btn-danger w-100">
+                                                                                    Hapus Data
+                                                                                </button>
+                                                                            </form>
                                                                         </div>
                                                                     </div>
                                                                 </div>
