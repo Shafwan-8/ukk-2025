@@ -109,7 +109,6 @@ class siswaController extends Controller
     public function destroy(string $id)
     {
         $siswa = Siswa::where('id', $id)->first();
-        dd($siswa); 
         $siswa->delete();
 
         return to_route('siswa.index')->with('success', 'Data Siswa Berhasil Dihapus!');

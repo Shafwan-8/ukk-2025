@@ -1,7 +1,7 @@
 @include('layouts.headerLayout')
 
-<x-pageHeader :status="true" pretitle="Siswa" title="Data Siswa" route="{{ route('siswa.create') }}" titleButton="Tambah Data Siswa"
-    hideBack />
+<x-pageHeader :status="true" pretitle="Siswa" title="Data Siswa" route="{{ route('siswa.create') }}"
+    titleButton="Tambah Data Siswa" hideBack />
 
 <div class="page-body">
     <div class="container xl">
@@ -69,7 +69,7 @@
                                                 </a>
                                                 <button class="avatar bg-danger text-white avatar-sm border-0"
                                                     type="button" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal">
+                                                    data-bs-target="#exampleModal{{ $siswa->id }}">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24"
                                                         height="24" viewBox="0 0 24 24" fill="none"
                                                         stroke="currentColor" stroke-width="1" stroke-linecap="round"
@@ -83,7 +83,7 @@
                                                         <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
                                                     </svg>
                                                 </button>
-                                                <div class="modal" id="exampleModal" tabindex="-1">
+                                                <div class="modal" id="exampleModal{{ $siswa->id }}" tabindex="-1">>
                                                     <div class="modal-dialog modal-sm" role="document">
                                                         <div class="modal-content">
                                                             <button type="button" class="btn-close"
@@ -116,16 +116,16 @@
                                                                         </div>
                                                                         <div class="col">
                                                                             <form
-                                                                            action="{{ route('siswa.destroy', $siswa->id) }}"
-                                                                            id="hapus-siswa-{{ $siswa->id }}"
-                                                                            method="post">
-                                                                            <button type="submit"
-                                                                                class="btn btn-danger w-100"
-                                                                                data-bs-dismiss="modal">
-                                                                                Hapus Data
-                                                                            </button>
-                                                                            @csrf
-                                                                            @method('DELETE')
+                                                                                action="{{ route('siswa.destroy', $siswa->id) }}"
+                                                                                id="hapus-siswa-{{ $siswa->id }}"
+                                                                                method="post">
+                                                                                <button type="submit"
+                                                                                    class="btn btn-danger w-100"
+                                                                                    data-bs-dismiss="modal">
+                                                                                    Hapus Data
+                                                                                </button>
+                                                                                @csrf
+                                                                                @method('DELETE')
                                                                             </form>
                                                                         </div>
                                                                     </div>
