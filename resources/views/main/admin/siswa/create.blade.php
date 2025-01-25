@@ -81,10 +81,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card-footer mt-3">
-                        <button type="submit" class="btn btn-primary">Tambah Data</button>
-                    </div>
                 </form>
+            </div>
+            <div class="card-footer mt-3">
+                <button type="submit" class="btn btn-primary">Tambah Data</button>
             </div>
         </div>
     </div>
