@@ -16,57 +16,62 @@
                         <div class="col">
                             <div class="mb-3">
                                 <label class="form-label">NIS</label>
-                                <input type="text" name="nis" class="form-control @error('nis') is-invalid @enderror" data-mask="000-000" placeholder="000-000" autocomplete="off" />
+                                <input type="text" name="nis"
+                                    class="form-control @error('nis') is-invalid @enderror" data-mask="000-000"
+                                    placeholder="000-000" autocomplete="off" />
                                 @error('nis')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
                                 @enderror
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Nama Siswa</label>
-                                <input type="text" class="form-control @error('nama') is-invalid @enderror" name="nama" placeholder="Nama Siswa">
+                                <input type="text" class="form-control @error('nama') is-invalid @enderror"
+                                    name="nama" placeholder="Nama Siswa">
                                 @error('nama')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
                                 @enderror
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Jenis Kelamin</label>
-                                <select name="jk" id="jk" class="form-select @error('jk') is-invalid @enderror">
+                                <select name="jk" id="jk"
+                                    class="form-select @error('jk') is-invalid @enderror">
                                     <option value="" selected hidden>-- pilih jenis kelamin --</option>
                                     <option value="L">Laki-laki</option>
                                     <option value="P">Perempuan</option>
                                 </select>
                                 @error('jk')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
                                 @enderror
                             </div>
                         </div>
                         <div class="col">
                             <div class="mb-3">
                                 <label class="form-label">Tingkatan</label>
-                                <select name="tingkatan" id="tingkatan" class="form-select @error('tingkatan') is-invalid @enderror">
+                                <select name="tingkatan" id="tingkatan"
+                                    class="form-select @error('tingkatan') is-invalid @enderror">
                                     <option value="" selected hidden>-- pilih tingkatan --</option>
                                     <option value="1">X</option>
                                     <option value="2">XI</option>
                                     <option value="3">XII</option>
                                 </select>
                                 @error('tingkatan')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
                                 @enderror
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Jurusan</label>
                                 <select name="jurusan" class="form-select @error('jurusan') is-invalid @enderror">
                                     <option value="" selected hidden>-- pilih jurusan --</option>
-                                    <option value="RPL 1">RPL 1</option>
-                                    <option value="RPL 2">RPL 2</option>
+                                    <option value="RPL1">RPL 1</option>
+                                    <option value="RPL2">RPL 2</option>
                                     <option value="TKJ">TKJ</option>
                                     <option value="MMK">Multimedia</option>
                                     <option value="PPLG">PPLG</option>
@@ -74,18 +79,18 @@
                                     <option value="TJKT">TJKT</option>
                                 </select>
                                 @error('jurusan')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
                                 @enderror
                             </div>
                         </div>
                     </div>
-                </form>
             </div>
             <div class="card-footer mt-3">
                 <button type="submit" class="btn btn-primary">Tambah Data</button>
             </div>
+            </form>
         </div>
     </div>
 </div>
