@@ -30,7 +30,7 @@
                                     <td>{{ $i++ }}</td>
                                     <td>{{ $alasan->nama_alasan }}</td>
                                     <td>
-                                        <a href="{{ route('alasan.edit', $alasan->id) }}') }}" class="avatar bg-yellow text-white avatar-sm me-2">
+                                        <a href="{{ route('alasan.edit', $alasan->id) }}" class="avatar bg-yellow text-white avatar-sm me-2">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                                 stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
@@ -89,7 +89,7 @@
                                                                     </button>
                                                                 </div>
                                                                 <div class="col">
-                                                                    <form action="#" id="hapus-alasan-{{ $alasan->id }}"
+                                                                    <form action="{{ route('alasan.destroy', $alasan->id) }}" id="hapus-alasan-{{ $alasan->id }}"
                                                                         method="post">
                                                                         <button type="submit"
                                                                             class="btn btn-danger w-100"

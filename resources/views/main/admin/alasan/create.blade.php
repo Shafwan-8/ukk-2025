@@ -16,7 +16,7 @@
                         <div class="col-6">
                             <div class="mb-3">
                                 <label for="nama_alasan" class="form-label">Nama alasan</label>
-                                <input type="text" name="nama_alasan" id="nama_alasan" class="form-control @error('nama_alasan') is-invalid @enderror">
+                                <input type="text" name="nama_alasan" id="nama_alasan" class="form-control @error('nama_alasan') is-invalid @enderror" autocomplete="false" autofocus>
                                 @error('nama_alasan')
                                 <div class="invalid-feedback">
                                     {{ $message }}
