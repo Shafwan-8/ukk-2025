@@ -78,7 +78,8 @@
                                     href="{{ route('siswa.index') }}">
                                     Data Siswa
                                 </a>
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item {{ request()->routeIs('alasan.*') ? 'active' : '' }}"
+                                    href="{{ route('alasan.index') }}">
                                     Data Alasan
                                 </a>
                             </div>

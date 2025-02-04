@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\adminDashboardController;
+use App\Http\Controllers\alasanController;
 use App\Http\Controllers\authController;
 use App\Http\Controllers\siswaController;
 use App\Http\Controllers\UserController;
@@ -25,4 +26,6 @@ Route::middleware('auth')->group(function () {
     Route::resource('/admin/siswa', siswaController::class);
 
     Route::resource('/admin/user', UserController::class);
+
+    Route::resource('/admin/alasan', alasanController::class);
 });
