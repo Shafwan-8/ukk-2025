@@ -5,6 +5,12 @@
 
 <div class="page-body">
     <div class="container-xl">
+        @if (session()->has('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>{{ session('success') }}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        @endif
         <div class="card">
             <div class="card-header">
                 <h3 class="card-title">Daftar Data Alasan</h3>

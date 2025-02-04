@@ -8,10 +8,10 @@
             <div class="card-header">
                 <h3 class="card-title">Tambah Data Siswa</h3>
             </div>
-            <div class="card-body">
-                <form action="{{ route('siswa.store') }}" method="post">
-                    @csrf
-                    @method('POST')
+            <form action="{{ route('siswa.store') }}" method="post">
+                @csrf
+                @method('POST')
+                <div class="card-body">
                     <div class="row row-cols-1 row-cols-lg-2">
                         <div class="col">
                             <div class="mb-3">
@@ -86,10 +86,10 @@
                             </div>
                         </div>
                     </div>
-            </div>
-            <div class="card-footer mt-3">
-                <button type="submit" class="btn btn-primary">Tambah Data</button>
-            </div>
+                </div>
+                <div class="card-footer mt-3">
+                    <button type="submit" class="btn btn-primary">Tambah Data</button>
+                </div>
             </form>
         </div>
     </div>
