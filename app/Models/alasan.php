@@ -9,6 +9,6 @@ class Alasan extends Model
     protected $table = 'alasans';
 
     protected $fillable = [
-        'alasan',
+        'nama_alasan',
     ];
 }

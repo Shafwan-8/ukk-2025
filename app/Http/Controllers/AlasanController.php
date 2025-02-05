@@ -24,7 +24,7 @@ class alasanController extends Controller
      */
     public function create()
     {
-        //
+        return view('main.admin.alasan.create');
     }
 
     /**
@@ -32,7 +32,13 @@ class alasanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $tervalidasi = $request->validate([
+            'nama_alasan' => 'required'
+        ]);
+
+        Alasan::create($tervalidasi);
+
+        return to_route('alasan.index')->with('success', 'Data Alasan Berhasil Ditambahkan!');
     }
 
     /**
@@ -48,7 +54,11 @@ class alasanController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $alasan = Alasan::find($id);
+
+        return view('main.admin.alasan.edit', [
+            'alasan' => $alasan
+        ]);
     }
 
     /**
@@ -56,7 +66,15 @@ class alasanController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $tervalidasi = $request->validate([
+            'nama_alasan' => 'required'
+        ]);
+
+        $alasan = Alasan::where('id', $id)->first();
+
+        $alasan->update($tervalidasi);
+
+        return to_route('alasan.index')->with('success', 'Data Alasan Berhasil Diupdate!');
     }
 
     /**
@@ -64,6 +82,10 @@ class alasanController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $alasan = Alasan::find($id);
+
+        $alasan->delete();
+
+        return to_route('alasan.index')->with('success', 'Data Alasan Berhasil Dihapus!');
     }
 }

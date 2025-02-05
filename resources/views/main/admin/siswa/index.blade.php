@@ -21,13 +21,13 @@
                         <div class="table-responsive">
                             <table id="dataTable" class="table table-bordered table-nowrap table-hover">
                                 <thead>
-                                    <th>#</th>
-                                    <th>Nis</th>
-                                    <th>Nama Siswa</th>
-                                    <th>Tingkatan</th>
-                                    <th>Jurusan</th>
-                                    <th>Aktif</th>
-                                    <th>Action</th>
+                                    <th width="3%">#</th>
+                                    <th width="5%">Nis</th>
+                                    <th width="60%">Nama Siswa</th>
+                                    <th width="5%">Tingkatan</th>
+                                    <th width="17%">Jurusan</th>
+                                    <th width="5%">Aktif</th>
+                                    <th width="5%">Action</th>
                                 </thead>
                                 <tbody>
                                     @foreach ($siswas as $siswa)

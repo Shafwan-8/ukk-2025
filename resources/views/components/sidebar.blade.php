@@ -49,7 +49,8 @@
 
                 <li
                     class="nav-item dropdown {{ request()->routeIs('siswa.*') ||
-                                                request()->routeIs('user.*') ? 'active' : '' }}">
+                                                request()->routeIs('user.*') ||
+                                                request()->routeIs('alasan.*') ? 'active' : '' }}">
                     <a class="nav-link dropdown-toggle" href="#navbar-base" data-bs-toggle="dropdown"
                         data-bs-auto-close="false" role="button" aria-expanded="false">
                         <span class="nav-link-icon ">
