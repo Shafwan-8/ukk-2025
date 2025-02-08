@@ -23,7 +23,8 @@
                                 <thead>
                                     <th width="3%">#</th>
                                     <th width="5%">Nis</th>
-                                    <th width="65%">Nama Siswa</th>
+                                    <th width="60%">Nama Siswa</th>
+                                    <th width="5%">jk</th>
                                     <th width="5%">Tingkatan</th>
                                     <th width="17%">Jurusan</th>
                                     <th width="5%">Action</th>
@@ -34,6 +35,7 @@
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $siswa->nis }}</td>
                                             <td>{{ $siswa->nama }}</td>
+                                            <td>{{ $siswa->jk }}</td>
                                             <td>{{ $siswa->tingkatan }}</td>
                                             <td>{{ $siswa->jurusan }}</td>
                                             <td>
