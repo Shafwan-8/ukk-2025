@@ -17,13 +17,12 @@ Route::middleware('guest')->group(function () {
     Route::post('/login', [authController::class, 'store'])->name('login.store');
 });
 
-Route::middleware(['auth', 'UsersRole:2'])->group(function () {
+Route::middleware(['auth', 'UsersRole:1,2'])->group(function () {
     Route::post('/logout', [authController::class, 'logout'])->name('logout');
 
     Route::get('/guru', [guruDashboardController::class, 'index'])
         ->name('guru.dashboard.index');
 });
-
 
 Route::middleware(['auth', 'UsersRole:1'])->group(function () {
     Route::post('/logout', [authController::class, 'logout'])->name('logout');
