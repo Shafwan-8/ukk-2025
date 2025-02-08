@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
 class CheckRoleUsers
@@ -16,7 +17,7 @@ class CheckRoleUsers
     public function handle(Request $request, Closure $next, ...$roles): Response
     {
         // dd($roles);
-        if (in_array(auth()->user()->level_user, $roles)) {
+        if (in_array(Auth::user()->level_user, $roles)) {
             return $next($request);
         }
 
