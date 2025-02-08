@@ -32,11 +32,13 @@ class authController extends Controller
 
         if ($data) {
 
-            $request->session()->regenerate();
-            // $status = Auth::check();
-            // dd($status);
-
-            return redirect()->route('admin.dashboard.index');
+            if (Auth::user()->level_user == 1) {
+                $request->session()->regenerate();
+                return redirect()->route('admin.dashboard.index');
+            } else {
+                $request->session()->regenerate();
+                return redirect()->route('guru.dashboard.index');
+            }
         }
 
         return redirect()->back()->with('failed', 'Login Gagal!');
