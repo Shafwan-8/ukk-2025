@@ -18,14 +18,14 @@ Route::middleware('guest')->group(function () {
 });
 
 Route::middleware(['auth', 'UsersRole:1,2'])->group(function () {
-    Route::post('/logout', [authController::class, 'logout'])->name('logout');
+    Route::post('/logout-guru', [authController::class, 'logout'])->name('logout-guru');
 
     Route::get('/guru', [guruDashboardController::class, 'index'])
         ->name('guru.dashboard.index');
 });
 
 Route::middleware(['auth', 'UsersRole:1'])->group(function () {
-    Route::post('/logout', [authController::class, 'logout'])->name('logout');
+    Route::post('/logout-admin', [authController::class, 'logout'])->name('logout-admin');
 
     Route::get('/admin', [adminDashboardController::class, 'index'])->name('admin.dashboard.index');
 

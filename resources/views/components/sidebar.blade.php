@@ -18,7 +18,7 @@
                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                     <a href="#" class="dropdown-item">Profile</a>
                     <div class="dropdown-divider"></div>
-                    <form action="{{ route('logout') }}" method="post">
+                    <form action="{{ route('logout-admin') }}" method="post">
                         @csrf
                         <button type="submit" class="dropdown-item">Logout</button>
                     </form>
@@ -112,7 +112,7 @@
                 <hr class="m-3">
 
                 <li class="nav-item d-none d-lg-block">
-                    <form action="{{ route('logout') }}" method="post">
+                    <form action="{{ route('logout-admin') }}" method="post">
                         @csrf
                         <button type="submit" class="nav-link">
                             <span class="nav-link-icon d-md-none d-lg-inline-block">
