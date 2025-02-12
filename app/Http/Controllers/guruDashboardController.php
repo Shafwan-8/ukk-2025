@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Siswa;
 use Illuminate\Http\Request;
 
 class guruDashboardController extends Controller
@@ -11,7 +12,16 @@ class guruDashboardController extends Controller
      */
     public function index()
     {
-        return view('main.guru.dashboard.index');
+        $jml_kelasXII = Siswa::where('tingkatan', 3)->count();
+        $jml_kelasXI = Siswa::where('tingkatan', 2)->count();
+        $jml_kelasX = Siswa::where('tingkatan', 1)->count();
+
+
+        return view('main.guru.dashboard.index', [
+            'jml_kelasXII' => $jml_kelasXII,
+            'jml_kelasXI' => $jml_kelasXI,
+            'jml_kelasX' => $jml_kelasX
+        ]);
     }
 
     /**
