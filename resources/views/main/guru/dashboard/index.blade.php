@@ -121,11 +121,36 @@
                                             Total Terlambat
                                         </div>
                                         <div class="text-secondary">
-                                            0 org.
+                                            {{ $jml_terlambat }} org.
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title mb-1">Data Jumlah Siswa Per Kelas</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="dataTable" class="table table-bordered table-nowrap table-hover">
+                                <thead>
+                                    <th>#</th>
+                                    <th>Kelas</th>
+                                    <th>Jumlah</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>

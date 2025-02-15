@@ -4,7 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class terlambat extends Model
+class Terlambat extends Model
 {
-    //
+    protected $table = 'terlambats';
+
+
 }
