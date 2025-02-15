@@ -35,3 +35,7 @@ Route::middleware(['auth', 'UsersRole:1'])->group(function () {
 
     Route::resource('/admin/alasan', alasanController::class);
 });
+
+Route::get('/error-401', function () {
+    return view('errors.error-401');
+})->name('errors.error-401');

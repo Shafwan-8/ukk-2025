@@ -21,6 +21,6 @@ class CheckRoleUsers
             return $next($request);
         }
 
-        return abort(401);
+        return redirect()->route('errors.error-401');
     }
 }
