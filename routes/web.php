@@ -5,6 +5,7 @@ use App\Http\Controllers\alasanController;
 use App\Http\Controllers\authController;
 use App\Http\Controllers\guruDashboardController;
 use App\Http\Controllers\siswaController;
+use App\Http\Controllers\terlambatController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,6 +23,8 @@ Route::middleware(['auth', 'UsersRole:1,2'])->group(function () {
 
     Route::get('/guru', [guruDashboardController::class, 'index'])
         ->name('guru.dashboard.index');
+
+    Route::resource('/guru/input-keterlambatan', terlambatController::class);
 });
 
 Route::middleware(['auth', 'UsersRole:1'])->group(function () {
