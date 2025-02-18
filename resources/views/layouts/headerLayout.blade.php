@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="{{ asset('css/tabler.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/dataTable/dataTables.dataTables.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/dataTable/dataTables.bootstrap5.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/tom-select/tom-select.bootstrap5.css') }}">
 </head>
 
 <body>

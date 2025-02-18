@@ -19,7 +19,6 @@
         "datatables.net-bs5": "^2.2.1",
         "datatables.net-dt": "^2.2.1",
         "imask": "^6.6.3",
-        "jquery": "^3.7.1",
-        "tom-select": "^2.4.3"
+        "jquery": "^3.7.1"
     }
 }

@@ -374,6 +374,7 @@
   --ts-pr-clear-button: 0px;
   --ts-pr-caret: 0px;
   --ts-pr-min: .75rem;
+  --bs-body-bg: white;
 }
 
 .ts-wrapper.single .ts-control, .ts-wrapper.single .ts-control input {
