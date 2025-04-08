@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Alasan;
 use App\Models\Siswa;
 use Illuminate\Http\Request;
 
@@ -13,9 +14,11 @@ class terlambatController extends Controller
     public function index()
     {
         $siswas = Siswa::all();
-        
+        $alasans = Alasan::all();
+
         return view('main.guru.input_keterlambatan.index', [
-            'siswas' => $siswas
+            'siswas' => $siswas,
+            'alasans' => $alasans
         ]);
     }
 

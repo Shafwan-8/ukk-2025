@@ -3,7 +3,7 @@
 <x-pageHeader :status="true" pretitle="User" title="Data User" :route="route('user.create')" titleButton="Tambah Data User" hideBack />
 
 <div class="page-body">
-    <div class="container xl">
+    <div class="container-xl">
         @if (session()->has('success'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 <strong>{{ session('success') }}</strong>

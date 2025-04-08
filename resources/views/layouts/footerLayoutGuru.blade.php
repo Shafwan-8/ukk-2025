@@ -58,7 +58,14 @@
                     }
                 </script>
                 <script>
-                    new TomSelect("#tom-select", {
+                    new TomSelect("#tom-select-nis", {
+                        create: false,
+                        sortField: {
+                            field: "text",
+                            direction: "asc"
+                        }
+                    });
+                    new TomSelect("#tom-select-alasan", {
                         create: false,
                         sortField: {
                             field: "text",
