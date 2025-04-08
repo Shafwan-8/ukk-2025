@@ -76,7 +76,8 @@
                                     <option value="MMK">Multimedia</option>
                                     <option value="PPLG">PPLG</option>
                                     <option value="DKV">DKV</option>
-                                    <option value="TJKT">TJKT</option>
+                                    <option value="TJKT1">TJKT 1</option>
+                                    <option value="TJKT2">TJKT 2</option>
                                 </select>
                                 @error('jurusan')
                                     <div class="invalid-feedback">

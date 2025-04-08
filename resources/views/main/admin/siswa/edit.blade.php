@@ -45,19 +45,21 @@
                             <div class="mb-3">
                                 <label class="form-label">Jurusan</label>
                                 <select name="jurusan" class="form-select" id="">
-                                    <option value="rpl-1" {{ $siswa->jurusan == 'rpl-1' ? 'selected' : '' }}>RPL 1
+                                    <option value="RPL1" {{ $siswa->jurusan == 'RPL1' ? 'selected' : '' }}>RPL 1
                                     </option>
-                                    <option value="rpl-2" {{ $siswa->jurusan == 'rpl-2' ? 'selected' : '' }}>RPL 2
+                                    <option value="RPL2" {{ $siswa->jurusan == 'RPL2' ? 'selected' : '' }}>RPL 2
                                     </option>
-                                    <option value="tkj" {{ $siswa->jurusan == 'tkj' ? 'selected' : '' }}>TKJ
+                                    <option value="TKJ" {{ $siswa->jurusan == 'TKJ' ? 'selected' : '' }}>TKJ
                                     </option>
-                                    <option value="mmk" {{ $siswa->jurusan == 'mmk' ? 'selected' : '' }}>Multimedia
+                                    <option value="MMK" {{ $siswa->jurusan == 'MMK' ? 'selected' : '' }}>Multimedia
                                     </option>
-                                    <option value="pplg" {{ $siswa->jurusan == 'pplg' ? 'selected' : '' }}>PPLG
+                                    <option value="PPLG" {{ $siswa->jurusan == 'PPLG' ? 'selected' : '' }}>PPLG
                                     </option>
-                                    <option value="dkv" {{ $siswa->jurusan == 'dkv' ? 'selected' : '' }}>DKV
+                                    <option value="DKV" {{ $siswa->jurusan == 'DKV' ? 'selected' : '' }}>DKV
                                     </option>
-                                    <option value="tjkt" {{ $siswa->jurusan == 'tjkt' ? 'selected' : '' }}>TJKT
+                                    <option value="TJKT1" {{ $siswa->jurusan == 'TJKT1' ? 'selected' : '' }}>TJKT 1
+                                    </option>
+                                    <option value="TJKT2" {{ $siswa->jurusan == 'TJKT2' ? 'selected' : '' }}>TJKT 2
                                     </option>
                                 </select>
                             </div>
