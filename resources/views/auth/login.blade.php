@@ -15,7 +15,7 @@
         <div class="container container-tight py-4">
             <div class="text-center mb-4">
                 <a href="#" class="navbar-brand navbar-brand-autodark">
-                    <img src="{{ asset('img/light-logo.png') }}" width="200" alt="Tabler" class="">
+                    <img src="{{ asset('img/light-logo.png') }}" width="200" alt="logo" class="">
                 </a>
             </div>
             @if (session()->has('failed'))
